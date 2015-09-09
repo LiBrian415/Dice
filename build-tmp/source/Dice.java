@@ -1,9 +1,25 @@
-void setup()
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Dice extends PApplet {
+
+public void setup()
 {
 	size(300,300);
 	noLoop();
 }
-void draw()
+public void draw()
 {
 	background(0);
 	for (int y=0;y<300;y+=100)
@@ -16,7 +32,7 @@ void draw()
 		}
 	}//your code here
 }
-void mousePressed()
+public void mousePressed()
 {
 	redraw();
 }
@@ -31,35 +47,35 @@ class Die //models one single dice cube
 	myY=y;
 		//variable initializations here
 	}
-	void roll()
+	public void roll()
 	{
-		if (Math.random()<.165)
+		if (Math.random()<.165f)
 		{
 			roll =1;
 		}
-		else if (Math.random()<.330)
+		else if (Math.random()<.330f)
 		{
 			roll =2;
 		}
-		else if (Math.random()<.495)
+		else if (Math.random()<.495f)
 		{
 			roll=3;
 		}
-		else if (Math.random()<.660)
+		else if (Math.random()<.660f)
 		{
 			roll=4;
 		}
-		else if (Math.random()<.825)
+		else if (Math.random()<.825f)
 		{
 			roll=5;
 		}
-		else if (Math.random()<.999)
+		else if (Math.random()<.999f)
 		{
 			roll=6;
 		}
 		//your code here
 	}
-	void show()
+	public void show()
 	{
 		strokeWeight(5);
 		fill(255,255,255);
@@ -106,4 +122,13 @@ class Die //models one single dice cube
 		}
 	}
 
+}
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Dice" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
 }
