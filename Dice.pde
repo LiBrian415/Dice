@@ -11,7 +11,6 @@ void draw()
 		for (int x=0; x<300;x+=100)
 		{
 		Die dice = new Die(x,y);
-		dice.roll();
 		dice.show();
 		}
 	}//your code here
