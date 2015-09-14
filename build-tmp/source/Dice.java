@@ -14,22 +14,37 @@ import java.io.IOException;
 
 public class Dice extends PApplet {
 
+int total;
 public void setup()
 {
-	size(300,300);
+	size(400,400);
 	noLoop();
 }
 public void draw()
 {
 	background(0);
-	for (int y=0;y<300;y+=100)
-	{
-		for (int x=0; x<300;x+=100)
-		{
-		Die dice = new Die(x,y);
-		dice.show();
-		}
-	}//your code here
+	stroke(0);
+	Die one = new Die(0,0);
+	one.show();
+	Die two = new Die(0,100);
+	two.show();
+	Die three = new Die(0,200);
+	three.show();
+	Die four = new Die(100,0);
+	four.show();
+	Die five = new Die(100,100);
+	five.show();
+	Die six = new Die(100,200);
+	six.show();
+	Die seven = new Die(200,0);
+	seven.show();
+	Die eight = new Die(200,100);
+	eight.show();
+	Die nine = new Die(200,200);
+	nine.show();
+	total=one.roll+two.roll+three.roll+four.roll+five.roll+six.roll+seven.roll+eight.roll+nine.roll;
+	fill(255);
+	text("total: "+total,350,350); //your code here
 }
 public void mousePressed()
 {
